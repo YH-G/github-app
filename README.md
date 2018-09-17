@@ -12,4 +12,4 @@
 - Original Version
 
 ## Screen shot
-![screen shot]('./statics/github-app')
+![screen shot]('github-app/statics/github-app.JPG')
