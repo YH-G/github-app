@@ -35,7 +35,7 @@ export const removeFromFavorites = (index) => ({
 // get repository information from Github
 export const getRepos = (inputValue) => {
     return (dispatch) => {
-        axios.get(`https://api.github.com/search/repositories?q=${inputValue}`, {headers: {Authorization: 'token 3b4ad68beae3a6b0cc99e7fa0305a16cab59511c'}}).then((res) => {
+        axios.get(`https://api.github.com/search/repositories?q=${inputValue}`).then((res) => {
             const result = res.data.items;
             getReposTag(result).then(reposTag => {
                 let n = result.length > 10 ? 10 : result.length
@@ -71,7 +71,7 @@ const getReposTag = (result) => {
     for (let i = 0; i < n; i++) {
         requestList.push(axios.get(result[i].tags_url))
      }
-    return axios.all(requestList, {headers: {Authorization: 'token 3b4ad68beae3a6b0cc99e7fa0305a16cab59511c'}}).then((res) => {
+    return axios.all(requestList).then((res) => {
         let reposTag = {}
         for (let i = 0; i < n; i++) {
             let id = result[i].id
