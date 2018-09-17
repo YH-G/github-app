@@ -5,7 +5,7 @@ import axios from 'axios';
 export const renderFavoriteList = () => {
     return (dispatch) => {
         let list = []
-        for(let i=0; i<localStorage.length;i++){
+        for(let i=0; i<localStorage.length;i++) {
             list.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
         }
         const action = storedData(list)
@@ -27,7 +27,7 @@ export const addToFavorite = (item) => ({
     item
 });
 
-export const removeFromFavorites = (index) =>({
+export const removeFromFavorites = (index) => ({
     type: constants.REMOVE_FROM_FAVORITES,
     index
 });
