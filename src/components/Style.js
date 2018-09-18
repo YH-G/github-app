@@ -100,6 +100,9 @@ export const ResultTable = styled.table`
         text-decoration: underline;
         cursor: pointer;
         padding: 4px 0px 4px 0;
+        &:hover {
+            color: #9f79f2;
+        }
     }
 `;
 
@@ -130,5 +133,8 @@ export const FavoriteTable = styled.table`
         text-decoration: underline;
         cursor: pointer;
         padding: 4px 0px 4px 0;
+        &:hover {
+            color: #9f79f2;
+        }
     }
 `;
